@@ -16,6 +16,7 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
+BuildRequires:	texinfo
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
