@@ -8,7 +8,6 @@ Vendor:		Gnanasekaran Swaminathan
 Group:		Libraries
 Source0:	http://www.linuxhacker.at/linux/downloads/src/%{name}-%{version}.tar.gz
 # Source0-md5:	b96e06129504ae2b4005a5834264c5a4
-# Source0-size:	64373
 Patch0:		%{name}-%{version}-p1.patch
 Patch1:		%{name}-info.patch
 URL:		http://www.linuxhacker.at/socketxx/
@@ -29,10 +28,10 @@ type-safe input output.
 This is a modified version of the original socket++ 1.11 Library.
 
 %description -l pl
-Socket++ jest bibliotek± definiuj±c± rodzinê klas C++ która mo¿e w
+Socket++ jest bibliotek± definiuj±c± rodzinê klas C++, która mo¿e w
 sposób bardziej efektywny obs³ugiwaæ gniazda ni¿ bezpo¶rednie
 odwo³ania do le¿±cego ni¿ej podsystemu gniazd. Jedn± z wiêkszych zalet
-socket++ jest to ¿e u¿ywa on tego samego interfejsu co klasa iostream,
+socket++ jest to, ¿e u¿ywa on tego samego interfejsu co klasa iostream,
 tak wiêc mo¿na wykonywaæ na niej operacje wej¶cia/wyj¶cia z kontrol±
 typów.
 
