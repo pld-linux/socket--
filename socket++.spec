@@ -30,11 +30,11 @@ odwo³ania do le¿±cego ni¿ej podsystemu gniazd. Jedn± z wiêkszych zalet
 socket++ jest to ¿e u¿wa on tego samego interfejsu co klasa iostream,
 tak wiêc mo¿na wykonywaæ na niej [type-safe(?)] wej¶cie/wyj¶cie.
 
-To jest zmodyfikowana wersja oryginalnej bibloteki socket++ 1.11 
+To jest zmodyfikowana wersja oryginalnej bibloteki socket++ 1.11
 
 %package devel
 Summary:	socket++ development files
-Summary(pl):	Pliki dla deweloperów programów korzystaj±cych z socket++ 
+Summary(pl):	Pliki dla deweloperów programów korzystaj±cych z socket++
 Group:		Development/Libraries
 Requires:	%{name} = :%{version}-%{release}
 
@@ -55,6 +55,18 @@ socket++ static library.
 
 %description static -l pl
 Biblioteka statyczna socket++ .
+
+%package doc-info
+Summary:	socket++ info documentation
+Summary(pl):	dokumentacja info socket++
+Group:		Development/Libraries
+Requires:	%{name}-devel = %{version}-%{release}
+
+%description doc-info
+socket++ info documentation
+
+%description doc-info -l pl
+Dokumentacja info socket++
 
 %prep
 %setup -q
@@ -78,9 +90,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 /sbin/ldconfig
-#/sbin/install-info %{_infodir}/socket++.info.gz %{_infodir}/dir
 
-%preun
+%post doc-info
+/sbin/install-info %{_infodir}/socket++.info.gz %{_infodir}/dir
+
+%preun doc-info
 if [ "$1" = 0 ]; then
   /sbin/install-info --delete %{_infodir}/socket++.info.gz %{_infodir}/dir
 fi
@@ -91,8 +105,11 @@ fi
 %files
 %defattr(644,root,root,755)
 %{_libdir}/lib*.so.*.*.*
-%{_infodir}/*
 %doc COPYING README* ChangeLog AUTHORS THANKS NEWS
+
+%files doc-info
+%defattr(644,root,root,755)
+%doc %{_infodir}/*
 
 %files devel
 %defattr(644,root,root,755)
