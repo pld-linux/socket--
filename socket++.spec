@@ -11,7 +11,7 @@ Source0:	http://www.linuxhacker.at/linux/downloads/src/%{name}-%{version}.tar.gz
 # Source0-size:	64373
 Patch0:		%{name}-%{version}-p1.patch
 Patch1:		%{name}-info.patch
-URL:		http://www.linuxhacker.at/socket++/
+URL:		http://www.linuxhacker.at/socketxx/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libstdc++-devel
