@@ -10,6 +10,7 @@ Source0:	http://www.linuxhacker.at/linux/downloads/src/%{name}-%{version}.tar.gz
 # Source0-md5:	b96e06129504ae2b4005a5834264c5a4
 # Source0-size:	64373
 Patch0:		%{name}-%{version}-p1.patch
+Patch1:		%{name}-info.patch
 URL:		http://www.linuxhacker.at/socket++/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -75,6 +76,7 @@ Dokumentacja info socket++
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__libtoolize}
