@@ -1,0 +1,14 @@
+--- socket++-1.12.12/doc/socket++.texi.orig	2002-11-25 13:31:56.000000000 +0100
++++ socket++-1.12.12/doc/socket++.texi	2004-10-16 16:16:58.064764064 +0200
+@@ -10,9 +10,9 @@
+ @end iftex
+ 
+ @ifinfo
+-@dircategory Programming & development tools
++@dircategory Libraries:
+ @direntry
+-* socket++: (socket++.info).			C++ family of socket classes.
++* socket++: (socket++).			C++ family of socket classes
+ @end direntry
+ This info file describes the C++ family of socket classes.
+ 
