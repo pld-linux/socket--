@@ -1,17 +1,19 @@
 Name:		socket++
 Summary:	A C++ interface for sockets.
-Version:	1.12.10
+Version:	1.12.12
 Release:	1
 License:	Freely Distributable
 Group:		Development/Libraries
-Source0:	http://www.hstraub.at/linux/downloads/src/%{name}-%{version}.tar.gz
-# Source0-md5:	1636c25b9192bf92c3b0dcb69c907f2a
+Source0:	http://www.linuxhacker.at/linux/downloads/src/%{name}-%{version}.tar.gz
+# Source0-md5:	b96e06129504ae2b4005a5834264c5a4
+# Source0-size:	64373
+Patch0:		%{name}-%{version}-p1.patch
 Vendor:		Gnanasekaran Swaminathan
-URL:		http://members.aon.at/hstraub/linux/socket++/
-BuildRequires:	libtool
+URL:		http://www.linuxhacker.at/socket++/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libstdc++-devel
+BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -27,10 +29,10 @@ This is a modified version of the original socket++ 1.11 Library
 Socket++ jest biblotek± definuj±c± rodzinê klas C++ która mo¿e w
 sposób bardziej efektywny obs³ugiwaæ gniazda ni¿ bezpo¶rednie
 odwo³ania do le¿±cego ni¿ej podsystemu gniazd. Jedn± z wiêkszych zalet
-socket++ jest to ¿e u¿wa on tego samego interfejsu co klasa iostream,
+socket++ jest to ¿e u¿ywa on tego samego interfejsu co klasa iostream,
 tak wiêc mo¿na wykonywaæ na niej [type-safe(?)] wej¶cie/wyj¶cie.
 
-To jest zmodyfikowana wersja oryginalnej bibloteki socket++ 1.11
+To jest zmodyfikowana wersja oryginalnej biblioteki socket++ 1.11
 
 %package devel
 Summary:	socket++ development files
@@ -46,7 +48,7 @@ Pliki dla deweloperów programów korzystaj±cych z socket++ .
 
 %package static
 Summary:	socket++ static library
-Summary(pl):	Biblioteki statyczna socket++
+Summary(pl):	Biblioteka statyczna socket++
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
@@ -70,6 +72,7 @@ Dokumentacja info socket++
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__libtoolize}
