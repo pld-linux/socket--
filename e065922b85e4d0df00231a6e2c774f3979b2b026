@@ -1,0 +1,3 @@
+- split into subpackages (devel, static)
+- added %{__libtoolize}
+- added proper BRs
