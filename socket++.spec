@@ -28,7 +28,7 @@ type-safe input output.
 This is a modified version of the original socket++ 1.11 Library.
 
 %description -l pl
-Socket++ jest biblotek± definuj±c± rodzinê klas C++ która mo¿e w
+Socket++ jest bibliotek± definiuj±c± rodzinê klas C++ która mo¿e w
 sposób bardziej efektywny obs³ugiwaæ gniazda ni¿ bezpo¶rednie
 odwo³ania do le¿±cego ni¿ej podsystemu gniazd. Jedn± z wiêkszych zalet
 socket++ jest to ¿e u¿ywa on tego samego interfejsu co klasa iostream,
