@@ -107,10 +107,6 @@ fi
 %{_libdir}/lib*.so.*.*.*
 %doc COPYING README* ChangeLog AUTHORS THANKS NEWS
 
-%files doc-info
-%defattr(644,root,root,755)
-%doc %{_infodir}/*
-
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/lib*.so
@@ -120,3 +116,7 @@ fi
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/lib*.a
+
+%files doc-info
+%defattr(644,root,root,755)
+%doc %{_infodir}/*
