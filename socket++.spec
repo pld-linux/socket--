@@ -8,6 +8,10 @@ Source0:	http://www.hstraub.at/linux/downloads/src/%{name}-%{version}.tar.gz
 # Source0-md5:	1636c25b9192bf92c3b0dcb69c907f2a
 Vendor:		Gnanasekaran Swaminathan
 URL:		http://members.aon.at/hstraub/linux/socket++/
+BuildRequires:	libtool
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libstdc++-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -28,10 +32,35 @@ tak wiêc mo¿na wykonywaæ na niej [type-safe(?)] wej¶cie/wyj¶cie.
 
 To jest zmodyfikowana wersja oryginalnej bibloteki socket++ 1.11 
 
+%package devel
+Summary:	socket++ development files
+Summary(pl):	Pliki dla deweloperów programów korzystaj±cych z socket++ 
+Group:		Development/Libraries
+Requires:	%{name} = :%{version}-%{release}
+
+%description devel
+socket++ development files.
+
+%description devel -l pl
+Pliki dla deweloperów programów korzystaj±cych z socket++ .
+
+%package static
+Summary:	socket++ static library
+Summary(pl):	Biblioteki statyczna socket++
+Group:		Development/Libraries
+Requires:	%{name}-devel = %{version}-%{release}
+
+%description static
+socket++ static library.
+
+%description static -l pl
+Biblioteka statyczna socket++ .
+
 %prep
 %setup -q
+
 %build
-#%{__gettextize}
+%{__libtoolize}
 %{__aclocal}
 %{__autoconf}
 %{__autoheader}
@@ -41,13 +70,11 @@ To jest zmodyfikowana wersja oryginalnej bibloteki socket++ 1.11
 
 %install
 rm -rf $RPM_BUILD_ROOT
-[ "$RPM_BUILD_ROOT" != "" ] && rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT
+
 %{__make} DESTDIR=$RPM_BUILD_ROOT install
-rm -f $RPM_BUILD_ROOT%{_infodir}/dir
 
 %clean
-[ "$RPM_BUILD_ROOT" != "" ] && rm -rf $RPM_BUILD_ROOT
+rm -rf $RPM_BUILD_ROOT
 
 %post
 /sbin/ldconfig
@@ -63,7 +90,16 @@ fi
 
 %files
 %defattr(644,root,root,755)
-%{_includedir}/socket++/*
-%{_libdir}/*
+%{_libdir}/lib*.so.*.*.*
 %{_infodir}/*
 %doc COPYING README* ChangeLog AUTHORS THANKS NEWS
+
+%files devel
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/lib*.so
+%{_libdir}/lib*.la
+%{_includedir}/%{name}
+
+%files static
+%defattr(644,root,root,755)
+%{_libdir}/lib*.a
