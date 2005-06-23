@@ -1,3 +1,7 @@
+#
+# Conditional build:
+%bcond_without	static_libs # don't build static libraries
+#
 Summary:	A C++ interface for sockets
 Summary(pl):	Interfejs C++ do gniazd
 Name:		socket++
@@ -84,7 +88,8 @@ Dokumentacja info socket++
 %{__autoconf}
 %{__autoheader}
 %{__automake}
-%configure
+%configure \
+	%{!?with_static_libs:--enable-static=no}
 %{__make}
 
 %install
@@ -116,9 +121,11 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/lib*.la
 %{_includedir}/%{name}
 
+%if %{with static_libs}
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/lib*.a
+%endif
 
 %files doc-info
 %defattr(644,root,root,755)
