@@ -7,8 +7,7 @@ Summary(pl):	Interfejs C++ do gniazd
 Name:		socket++
 Version:	1.12.12
 Release:	1
-License:	Freely Distributable
-Vendor:		Gnanasekaran Swaminathan
+License:	distributable
 Group:		Libraries
 Source0:	http://www.linuxhacker.at/linux/downloads/src/%{name}-%{version}.tar.gz
 # Source0-md5:	b96e06129504ae2b4005a5834264c5a4
@@ -113,7 +112,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS COPYING ChangeLog NEWS README* THANKS
-%{_libdir}/lib*.so.*.*.*
+%attr(755,root,root) %{_libdir}/lib*.so.*.*.*
 
 %files devel
 %defattr(644,root,root,755)
