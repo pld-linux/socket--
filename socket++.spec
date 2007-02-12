@@ -3,7 +3,7 @@
 %bcond_without	static_libs # don't build static libraries
 #
 Summary:	A C++ interface for sockets
-Summary(pl.UTF-8):   Interfejs C++ do gniazd
+Summary(pl.UTF-8):	Interfejs C++ do gniazd
 Name:		socket++
 Version:	1.12.12
 Release:	1
@@ -42,7 +42,7 @@ To jest zmodyfikowana wersja oryginalnej biblioteki socket++ 1.11.
 
 %package devel
 Summary:	socket++ development files
-Summary(pl.UTF-8):   Pliki dla deweloperów programów korzystających z socket++
+Summary(pl.UTF-8):	Pliki dla deweloperów programów korzystających z socket++
 Group:		Development/Libraries
 Requires:	%{name} = :%{version}-%{release}
 
@@ -54,7 +54,7 @@ Pliki dla deweloperów programów korzystających z socket++.
 
 %package static
 Summary:	socket++ static library
-Summary(pl.UTF-8):   Biblioteka statyczna socket++
+Summary(pl.UTF-8):	Biblioteka statyczna socket++
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
@@ -66,7 +66,7 @@ Biblioteka statyczna socket++ .
 
 %package doc-info
 Summary:	socket++ info documentation
-Summary(pl.UTF-8):   dokumentacja info socket++
+Summary(pl.UTF-8):	dokumentacja info socket++
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
