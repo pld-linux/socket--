@@ -3,7 +3,7 @@
 %bcond_without	static_libs # don't build static libraries
 #
 Summary:	A C++ interface for sockets
-Summary(pl):	Interfejs C++ do gniazd
+Summary(pl.UTF-8):   Interfejs C++ do gniazd
 Name:		socket++
 Version:	1.12.12
 Release:	1
@@ -30,50 +30,50 @@ type-safe input output.
 
 This is a modified version of the original socket++ 1.11 Library.
 
-%description -l pl
-Socket++ jest bibliotek± definiuj±c± rodzinê klas C++, która mo¿e w
-sposób bardziej efektywny obs³ugiwaæ gniazda ni¿ bezpo¶rednie
-odwo³ania do le¿±cego ni¿ej podsystemu gniazd. Jedn± z wiêkszych zalet
-socket++ jest to, ¿e u¿ywa on tego samego interfejsu co klasa
-iostream, tak wiêc mo¿na wykonywaæ na niej operacje wej¶cia/wyj¶cia z
-kontrol± typów.
+%description -l pl.UTF-8
+Socket++ jest bibliotekÄ… definiujÄ…cÄ… rodzinÄ™ klas C++, ktÃ³ra moÅ¼e w
+sposÃ³b bardziej efektywny obsÅ‚ugiwaÄ‡ gniazda niÅ¼ bezpoÅ›rednie
+odwoÅ‚ania do leÅ¼Ä…cego niÅ¼ej podsystemu gniazd. JednÄ… z wiÄ™kszych zalet
+socket++ jest to, Å¼e uÅ¼ywa on tego samego interfejsu co klasa
+iostream, tak wiÄ™c moÅ¼na wykonywaÄ‡ na niej operacje wejÅ›cia/wyjÅ›cia z
+kontrolÄ… typÃ³w.
 
 To jest zmodyfikowana wersja oryginalnej biblioteki socket++ 1.11.
 
 %package devel
 Summary:	socket++ development files
-Summary(pl):	Pliki dla deweloperów programów korzystaj±cych z socket++
+Summary(pl.UTF-8):   Pliki dla deweloperÃ³w programÃ³w korzystajÄ…cych z socket++
 Group:		Development/Libraries
 Requires:	%{name} = :%{version}-%{release}
 
 %description devel
 socket++ development files.
 
-%description devel -l pl
-Pliki dla deweloperów programów korzystaj±cych z socket++.
+%description devel -l pl.UTF-8
+Pliki dla deweloperÃ³w programÃ³w korzystajÄ…cych z socket++.
 
 %package static
 Summary:	socket++ static library
-Summary(pl):	Biblioteka statyczna socket++
+Summary(pl.UTF-8):   Biblioteka statyczna socket++
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 socket++ static library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Biblioteka statyczna socket++ .
 
 %package doc-info
 Summary:	socket++ info documentation
-Summary(pl):	dokumentacja info socket++
+Summary(pl.UTF-8):   dokumentacja info socket++
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description doc-info
 socket++ info documentation
 
-%description doc-info -l pl
+%description doc-info -l pl.UTF-8
 Dokumentacja info socket++
 
 %prep
